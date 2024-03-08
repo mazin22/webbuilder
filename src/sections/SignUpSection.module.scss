@@ -1,0 +1,18 @@
+@import "../sass/mixins";
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include respond(phone) {
+    gap: 1rem;
+  }
+
+  @include respond(small-desktop) {
+    gap: 3rem;
+    padding: 0 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
