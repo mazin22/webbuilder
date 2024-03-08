@@ -1,0 +1,77 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26rem;
+  margin-top: 1rem;
+
+  @include respond(phone) {
+    width: 38rem;
+  }
+
+  @include respond(tab-port) {
+    width: 60rem;
+  }
+
+  @include respond(tab-land) {
+    width: 70rem;
+  }
+
+  @include respond(small-desktop) {
+    width: 40rem;
+  }
+
+  &__input {
+    background-color: $color-grey-0;
+    padding: 1.6rem 1rem;
+    width: 75%;
+
+    border: 2px solid $color-grey-0;
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+
+    @include respond(phone) {
+      padding: 1.6rem 1.5rem;
+    }
+
+    @include respond(tab-port) {
+      padding: 1.6rem 2rem;
+    }
+
+    &:focus {
+      outline: 0;
+      border: 2px solid $color-blue;
+      border-right: none;
+    }
+  }
+
+  &__btn {
+    background-color: $color-blue;
+    color: $color-grey-0;
+    padding: 1.6rem 1rem;
+    @include fontXs;
+    width: 30%;
+    cursor: pointer;
+
+    border: none;
+    border-top-right-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    transition: background-color 0.3s;
+
+    @include respond(phone) {
+      padding: 1.6rem 1.5rem;
+    }
+
+    @include respond(tab-port) {
+      padding: 1.6rem 2rem;
+    }
+
+    &:hover,
+    &:active {
+      background-color: $color-blue-hover;
+    }
+  }
+}
