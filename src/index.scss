@@ -1,0 +1,102 @@
+@import "./sass/variables";
+@import "./sass/mixins";
+
+* {
+  &,
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+}
+
+html {
+  font-size: 56.25%;
+  box-sizing: border-box;
+
+  @include respond(small-desktop) {
+    font-size: 62.5%;
+  }
+
+  @include respond(huge-desktop) {
+    font-size: 68.75%;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  @include fontMd;
+  font-weight: 400;
+  color: $color-grey-800;
+  background-color: $color-grey-50;
+}
+
+%container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.inner-container {
+  @extend %container;
+  padding: 0 1rem;
+
+  @include respond(phone) {
+    padding: 0 5rem;
+  }
+}
+
+.section {
+  @extend %container;
+  padding: 0 4rem;
+  margin-bottom: 8rem;
+
+  margin-top: 10rem; // this is a tmporary style for testing, remove after completion
+
+  @include respond(tab-land) {
+    padding: 0 7rem;
+  }
+
+  @include respond(small-desktop) {
+    padding: 0 10rem;
+  }
+}
+
+%heading {
+  color: $color-grey-900;
+  font-weight: 400;
+}
+
+.primary-heading {
+  @extend %heading;
+  @include fontXl(1.4);
+
+  @include respond(phone) {
+    @include fontHuge;
+  }
+}
+
+.secondary-heading {
+  @extend %heading;
+  @include fontXl(1.4);
+}
+
+.tertiary-heading {
+  @extend %heading;
+  @include fontLg;
+  color: $color-grey-700;
+
+  @include respond(phone) {
+    @include fontXl(1.4);
+  }
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
